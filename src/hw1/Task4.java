@@ -2,11 +2,9 @@ package hw1;
 
 public class Task4 {
     public static void main(String[] args) {
-
         int twoDigitInt = 45;
+        int sumOfDigits = twoDigitInt / 10 + twoDigitInt % 10;
 
-        int digits = twoDigitInt / 10 + twoDigitInt % 10;
-
-        System.out.println(digits);
+        System.out.println(sumOfDigits);
     }
 }
