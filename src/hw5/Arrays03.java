@@ -11,23 +11,19 @@ public class Arrays03 {
         String[] words = new String[n];
 
         String userInput;
-        boolean wordIsNew;
-        int wordsAddedCounter = 0;
-        for (int i = 0; i < n; i++) {
-            userInput = scan.nextLine();
-
-            if ("exit".equals(userInput)) break;
-
-            wordIsNew = true;
-            for (int j = 0; j < wordsAddedCounter; j++)
+        int i = 0;
+        while (i < n && !"exit".equals(userInput = scan.nextLine())) {
+            boolean wordIsNew = true;
+            for (int j = 0; j < i; j++) {
                 if (words[j].equals(userInput)) {
                     wordIsNew = false;
                     break;
                 }
+            }
 
             if (wordIsNew) {
-                words[wordsAddedCounter] = userInput;
-                wordsAddedCounter++;
+                words[i] = userInput;
+                i++;
             }
         }
 
