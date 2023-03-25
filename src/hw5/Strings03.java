@@ -1,4 +1,4 @@
-package hw4;
+package hw5;
 
 public class Strings03 {
     public static void main(String[] args) {

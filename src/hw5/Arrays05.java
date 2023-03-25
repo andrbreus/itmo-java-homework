@@ -1,7 +1,6 @@
-package hw4;
+package hw5;
 
 import java.util.Arrays;
-import java.util.Iterator;
 
 public class Arrays05 {
     public static void main(String[] args) {
