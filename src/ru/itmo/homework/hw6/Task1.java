@@ -14,16 +14,16 @@ public class Task1 {
         var alpinist03 =
                 new Alpinist("Eden C. Martinez", "4588 Sampson Street Coal Creek Canyon, CO 81221");
 
-        Group group01 = new Group(3, new ArrayList<>(List.of(alpinist01, alpinist02, alpinist03)), everest);
+        var group01 = new Group(3, new ArrayList<>(List.of(alpinist01, alpinist02, alpinist03)), everest);
 
-        Group group02 = new Group(3, new ArrayList<>() {
+        var group02 = new Group(3, new ArrayList<>() {
             {
                 add(new Alpinist("Suzanne W. Bill", "242 Park Street San Francisco, CA 94104"));
                 add(new Alpinist("Kyle P. McManus", "2518 Lilac Lane Savannah, GA 31401"));
             }
         }, ararat);
 
-        Group group03 = new Group(3, new ArrayList<>() {
+        var group03 = new Group(3, new ArrayList<>() {
             {
                 add(new Alpinist("Robyn J. Johnson", "2656 Oakwood Circle Mission Viejo, CA 92692"));
                 add(new Alpinist("Susan H. Powers", "484 Stonepot Road Newark, NJ 07102"));
