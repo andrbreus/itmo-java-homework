@@ -29,7 +29,7 @@ public class Group {
         return capacity > alpinists.size();
     }
 
-    void addAlpinist(Alpinist alpinist) {
+    public void addAlpinist(Alpinist alpinist) {
         if (!hasVacantPlaces()) {
             throw new IndexOutOfBoundsException("Max capacity is reached");
         }
