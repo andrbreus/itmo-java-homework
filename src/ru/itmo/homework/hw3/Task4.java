@@ -1,4 +1,4 @@
-package hw3;
+package ru.itmo.homework.hw3;
 
 import java.util.Scanner;
 

@@ -1,6 +1,6 @@
-package hw5;
+package ru.itmo.homework.hw5;
 
-public class Strings02 {
+public class Strings03 {
     public static void main(String[] args) {
         String text = "JAVA стоит первым в рейтинге популярности использования языков; " +
                 "JAVA один из наиболее мощных высокоуровневых языков программирования; " +
@@ -9,7 +9,12 @@ public class Strings02 {
                 "предназначен для подготовки программистов-профессионалов, специализирующихся " +
                 "на разработке программного обеспечения различного класса и уровня сложности.";
 
-        String editedText = text.replaceAll("JAVA", "PYTHON");
-        System.out.println(editedText);
+        int count = 0;
+
+        for (String word : text.split(" ")) {
+            if ("JAVA".equals(word)) count++;
+        }
+
+        System.out.println(count);
     }
 }

@@ -1,4 +1,4 @@
-package hw2;
+package ru.itmo.homework.hw2;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package hw5;
+package ru.itmo.homework.hw5;
 
 import java.util.Arrays;
 

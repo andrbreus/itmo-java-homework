@@ -1,4 +1,4 @@
-package hw1;
+package ru.itmo.homework.hw1;
 
 public class Task1 {
     public static void main(String[] args) {

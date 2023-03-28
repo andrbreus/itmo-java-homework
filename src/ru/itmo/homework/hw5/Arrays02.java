@@ -1,4 +1,4 @@
-package hw5;
+package ru.itmo.homework.hw5;
 
 public class Arrays02 {
     public static void main(String[] args) {
