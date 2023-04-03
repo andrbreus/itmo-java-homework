@@ -13,24 +13,24 @@ public class Workshop {
         index = 0;
     }
 
-    public void addVehicle(Repairable vehicle) {
-        if (index < CAPACITY) repairQueue[index] = vehicle;
+    public void addItemToRepairQueue(Repairable itemToRepair) {
+        if (index < CAPACITY) repairQueue[index] = itemToRepair;
         index++;
     }
 
     public void repairAll() {
         for (int i = 0; i < index; i++) {
-            Repairable vehicle = repairQueue[i];
-            vehicle.repair();
+            Repairable itemToRepair = repairQueue[i];
+            itemToRepair.repair();
 
-            if (vehicle instanceof Recolorable) {
-                String oldColor = ((Vehicle) vehicle).getColor();
+            if (itemToRepair instanceof Recolorable) {
+                String oldColor = ((Recolorable) itemToRepair).getColor();
 
                 int newColorIndex = getRandomColorIndex();
                 while (colors[newColorIndex].equals(oldColor)) {
                     newColorIndex = getRandomColorIndex();
                 }
-                ((Recolorable) vehicle).recolor(colors[newColorIndex]);
+                ((Recolorable) itemToRepair).recolor(colors[newColorIndex]);
             }
         }
         Arrays.fill(repairQueue, null);

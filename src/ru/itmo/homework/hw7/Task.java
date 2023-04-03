@@ -17,7 +17,7 @@ public class Task {
         var workshop = new Workshop();
 
         for (Vehicle vehicle : vehiclesToRepair) {
-            workshop.addVehicle(vehicle);
+            workshop.addItemToRepairQueue(vehicle);
         }
 
         System.out.println("Before repair:");

@@ -15,5 +15,5 @@ public class Task4 {
         else if (count <= 39 && count >= 0) mark = "попробуйте в следующий раз";
 
         System.out.println(mark);
-;    }
+    }
 }
