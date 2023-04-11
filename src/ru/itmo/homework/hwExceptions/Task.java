@@ -13,6 +13,7 @@ public class Task {
             case FILE_NOT_FOUND -> throw new FileNotFoundException();
         }
     }
+
     public static void main(String[] args) {
         var status = Status.ACCESS_DENIED;
 
