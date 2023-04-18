@@ -14,6 +14,7 @@ public class Task02 {
 
         return logins;
     }
+
     private static Map<String, Integer> countRepeatingWords(List<String> words) {
         Map<String, Integer> counter = new HashMap<>();
 
@@ -95,7 +96,7 @@ public class Task02 {
             wordCounter.put(word, wordCounter.getOrDefault(word, 0) + 1);
 
         List<Map.Entry<String, Integer>> entryList = new ArrayList<>(wordCounter.entrySet());
-        Collections.sort(entryList,new Comparator<>() {
+        Collections.sort(entryList, new Comparator<>() {
             @Override
             public int compare(Map.Entry<String, Integer> entry1, Map.Entry<String, Integer> entry2) {
                 if (entry1.getValue().equals(entry2.getValue()))
