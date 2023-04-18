@@ -69,14 +69,14 @@ public class Task02 {
             wordCounter.put(word, wordCounter.getOrDefault(word, 0) + 1);
 
         TreeSet<Map.Entry<String, Integer>> sortedMapEntries =
-                new TreeSet<>(new Comparator<Map.Entry<String, Integer>>() {
-            @Override
-            public int compare(Map.Entry<String, Integer> entry1, Map.Entry<String, Integer> entry2) {
-                if (entry1.getValue().equals(entry2.getValue()))
-                    return entry1.getKey().compareTo(entry2.getKey());
-                return entry1.getValue().compareTo(entry2.getValue());
-            }
-        });
+                new TreeSet<>(new Comparator<>() {
+                    @Override
+                    public int compare(Map.Entry<String, Integer> entry1, Map.Entry<String, Integer> entry2) {
+                        if (entry1.getValue().equals(entry2.getValue()))
+                            return (-1) * entry1.getKey().compareTo(entry2.getKey());
+                        return entry1.getValue().compareTo(entry2.getValue());
+                    }
+                });
 
         sortedMapEntries.addAll(wordCounter.entrySet());
 
@@ -139,8 +139,11 @@ public class Task02 {
                 "uncover many web sites still uncover in their infancy Various versions uncover have evolved over the years uncover sometimes by accident" +
                 " sometimes on purpose injected humour and the like";
 
+        String textToTestOrder = "a a a a a a bb cc dd";
+
         System.out.println(wordFrequency(text, "it"));
         System.out.println(groupWordsByFrequency(text));
         print10MostFrequentWords(text);
+        print10MostFrequentWords(textToTestOrder);
     }
 }
