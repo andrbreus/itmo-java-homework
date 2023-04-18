@@ -62,7 +62,31 @@ public class Task02 {
         return wordsGroupedByFrequency;
     }
 
-    private static void print10MostFrequentWords(String text) {}
+    private static void print10MostFrequentWords(String text) {
+        Map<String, Integer> wordCounter = new HashMap<>();
+
+        for (String word : text.split(" "))
+            wordCounter.put(word, wordCounter.getOrDefault(word, 0) + 1);
+
+        TreeSet<Map.Entry<String, Integer>> sortedMapEntries =
+                new TreeSet<>(new Comparator<Map.Entry<String, Integer>>() {
+            @Override
+            public int compare(Map.Entry<String, Integer> entry1, Map.Entry<String, Integer> entry2) {
+                if (entry1.getValue().equals(entry2.getValue()))
+                    return entry1.getKey().compareTo(entry2.getKey());
+                return entry1.getValue().compareTo(entry2.getValue());
+            }
+        });
+
+        sortedMapEntries.addAll(wordCounter.entrySet());
+
+        Map.Entry<String, Integer> entry;
+        int count = 0;
+        while ((entry = sortedMapEntries.pollLast()) != null && count < 10) {
+            System.out.println(entry.getKey());
+            count++;
+        }
+    }
 
     public static void main(String[] args) {
         // FIXME:: В решениях не использовать lambda выражения и stream API
