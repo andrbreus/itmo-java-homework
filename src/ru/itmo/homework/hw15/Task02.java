@@ -62,7 +62,7 @@ public class Task02 {
         return wordsGroupedByFrequency;
     }
 
-    private static void print10MostFrequentWords(String text) {
+    private static void print10MostFrequentWordsV1(String text) {
         Map<String, Integer> wordCounter = new HashMap<>();
 
         for (String word : text.split(" "))
@@ -85,6 +85,29 @@ public class Task02 {
         while ((entry = sortedMapEntries.pollLast()) != null && count < 10) {
             System.out.println(entry.getKey());
             count++;
+        }
+    }
+
+    private static void print10MostFrequentWordsV2(String text) {
+        Map<String, Integer> wordCounter = new HashMap<>();
+
+        for (String word : text.split(" "))
+            wordCounter.put(word, wordCounter.getOrDefault(word, 0) + 1);
+
+        List<Map.Entry<String, Integer>> entryList = new ArrayList<>(wordCounter.entrySet());
+        Collections.sort(entryList,new Comparator<>() {
+            @Override
+            public int compare(Map.Entry<String, Integer> entry1, Map.Entry<String, Integer> entry2) {
+                if (entry1.getValue().equals(entry2.getValue()))
+                    return entry1.getKey().compareTo(entry2.getKey());
+                return (-1) * entry1.getValue().compareTo(entry2.getValue());
+            }
+        });
+
+        int index = 0;
+        while (index < entryList.size() && index < 10) {
+            System.out.println(entryList.get(index).getKey());
+            index++;
         }
     }
 
@@ -143,7 +166,9 @@ public class Task02 {
 
         System.out.println(wordFrequency(text, "it"));
         System.out.println(groupWordsByFrequency(text));
-        print10MostFrequentWords(text);
-        print10MostFrequentWords(textToTestOrder);
+        print10MostFrequentWordsV1(text);
+        print10MostFrequentWordsV2(text);
+        print10MostFrequentWordsV1(textToTestOrder);
+        print10MostFrequentWordsV2(textToTestOrder);
     }
 }
