@@ -7,7 +7,7 @@ public interface RulePredicate extends Predicate<String> {
         return (t) -> test(t) && other.test(t);
     }
 
-    default RulePredicate orRule(Predicate<String> other) {
+    default RulePredicate orRule(RulePredicate other) {
         return (t) -> test(t) || other.test(t);
     }
 }
