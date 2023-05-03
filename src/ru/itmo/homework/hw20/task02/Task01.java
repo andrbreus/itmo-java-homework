@@ -1,14 +1,11 @@
-package ru.itmo.homework.hw20.task01;
+package ru.itmo.homework.hw20.task02;
 
 import ru.itmo.homework.hw18.Course;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
-import ru.itmo.homework.hw18.Course;
 
 public class Task01 {
     public static void main(String[] args) {

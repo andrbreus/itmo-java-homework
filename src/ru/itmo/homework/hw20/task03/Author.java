@@ -1,7 +1,7 @@
-package ru.itmo.homework.hw20.task02;
+package ru.itmo.homework.hw20.task03;
 
 import java.time.LocalDate;
-import java.util.Objects;
+
 public class Author {
     private final String name;
     private final String email;

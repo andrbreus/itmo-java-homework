@@ -1,4 +1,4 @@
-package ru.itmo.homework.hw20.task02;
+package ru.itmo.homework.hw20.task03;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
